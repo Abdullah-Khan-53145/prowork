@@ -1,0 +1,162 @@
+.navbar__parent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+.mobile_nav {
+  display: none;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+.left-side img {
+  width: 12.5rem;
+  height: 100%;
+  object-fit: contain;
+}
+.middle-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.middle-section a {
+  margin: 0 10px;
+}
+
+.user__info {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.right-side {
+  display: flex;
+  align-items: center;
+  width: 12.5rem;
+  position: relative;
+}
+
+.right-side img {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.user__profile {
+  display: flex;
+  flex-direction: column;
+}
+.user__profile span:nth-child(1) {
+  font-weight: bold;
+}
+.user__profile span:nth-child(2) {
+  font-size: 0.7rem;
+}
+.user__logout__modal {
+  display: none;
+  position: absolute;
+  width: 55%;
+  height: 8rem;
+
+  align-items: flex-end;
+  padding: 0 1rem;
+  justify-content: center;
+}
+.user__logout__modal .user__logout {
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 100%;
+  padding: 1rem 1.5rem;
+}
+.user__profile:hover .user__logout__modal {
+  display: flex;
+}
+.close {
+  display: none;
+}
+
+@media (max-width: 756px) {
+  .mobile_nav {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+  .mobile_nav img:nth-child(1) {
+    width: 12rem;
+    object-fit: contain;
+  }
+  .hamburger {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .navbar {
+    position: fixed;
+    transition: transform 0.2s ease-in-out;
+    inset: 0;
+    background-color: white;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 10rem;
+  }
+  .close {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+  }
+  .middle-section {
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 3rem;
+  }
+  .middle-section button {
+    font-size: 3rem;
+  }
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .user__profile {
+    align-items: center;
+    font-size: 2rem;
+  }
+  .user__profile button {
+    display: block;
+  }
+  .right-side img {
+    width: 7rem;
+    height: 7rem;
+  }
+  .user__profile span:nth-child(2) {
+    font-size: 1.7rem;
+  }
+  .user__logout__modal {
+    position: static;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+  }
+  .user__logout__modal .user__logout {
+    background-color: white;
+    box-shadow: none;
+    width: fit-content;
+    padding: 0;
+  }
+  .left-side img {
+    width: 20rem;
+  }
+}
