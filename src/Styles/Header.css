@@ -3,6 +3,8 @@
   left: 0;
   right: 0;
   top: 0;
+  z-index: 1000000;
+  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .navbar {
