@@ -1,6 +1,7 @@
 .services__parent {
   width: 100%;
   color: #8d021f;
+  padding-bottom: 4rem;
   background-color: #fdbdc2;
 }
 .card {
@@ -35,7 +36,7 @@
 }
 .services__Heading > div {
   padding: 2rem;
-  height: 90vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -58,7 +59,7 @@
   border: 1px solid #8d021f;
 }
 .services__Heading h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
 }
