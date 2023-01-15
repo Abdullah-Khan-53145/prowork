@@ -3,7 +3,7 @@ export const Footer = () => {
   return (
     <footer>
       <div class="categories">
-        <img src="./imgs/logo.png" />
+        <img src="/imgs/logo.png" />
         <div className="footer__text">
           <ul>
             <b>Important Links</b>

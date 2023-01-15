@@ -1,0 +1,427 @@
+{
+  "gigs": [
+    {
+      "username": "JohnDoe",
+      "profile_pic": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/profile-pics%2Fprofilepic-JohnDoe.JPG?alt=media&token=160a815b-b717-4645-9a52-678673314f2c",
+      "gig_cat": "web development",
+      "gig_img": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/gig-imgs%2Fcoverimg-gig1.JPG?alt=media&token=f13ba70e-6b01-4075-a009-b36d8be32d06",
+      "gig_title": "I will create a website using ReactJS and Firebase",
+      "gig_description": "I am a professional web developer with over 5 years of experience. I specialize in creating responsive and dynamic websites using ReactJS and Firebase. I will work closely with you to understand your requirements and deliver a website that meets your needs.",
+      "packages": [
+        {
+          "title": "Basic",
+          "description": "I will create a basic website with up to 5 pages and basic functionality using ReactJS and Firebase.",
+          "price": "$100",
+          "delivery_time": "3 days"
+        },
+        {
+          "title": "Standard",
+          "description": "I will create a standard website with up to 10 pages and additional functionality such as contact forms and user accounts using ReactJS and Firebase.",
+          "price": "$250",
+          "delivery_time": "7 days"
+        },
+        {
+          "title": "Gold",
+          "description": "I will create a custom website with up to 20 pages and advanced functionality such as e-commerce integration and real-time data updates using ReactJS and Firebase.",
+          "price": "$500",
+          "delivery_time": "14 days"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "JaneSmith",
+          "review": "John was a pleasure to work with. He delivered a beautiful and fully functional website on time and on budget. Highly recommended!",
+          "rating": 5
+        },
+        {
+          "username": "MikeJohnson",
+          "review": "John did an excellent job on my website. He was very responsive and professional throughout the whole process. I would definitely hire him again!",
+          "rating": 4
+        },
+        {
+          "username": "AmyWilliams",
+          "review": "John was great to work with. He understood my vision and brought it to life with his skills. I am very satisfied with the final result.",
+          "rating": 5
+        }
+      ],
+      "average_rating": 4.7,
+      "delivered_projects": 12
+    },
+    {
+      "username": "JaneDoe",
+      "profile_pic": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/profile-pics%2Fprofilepic-janeDoe.JPG?alt=media&token=a3c1df31-f927-42d7-b179-d4cc90eec57c",
+      "gig_cat": "mobile development",
+      "gig_img": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/gig-imgs%2Fcoverimg-gig2.JPG?alt=media&token=095d571b-2871-4591-ae29-4a4163ce6bc8",
+      "gig_title": "I will design a mobile app using Flutter",
+      "gig_description": "I am a professional mobile app designer with over 3 years of experience. I specialize in creating beautiful and user-friendly mobile apps using Flutter. I will work closely with you to understand your requirements and deliver a mobile app that meets your needs.",
+      "packages": [
+        {
+          "title": "Basic",
+          "description": "I will design a basic mobile app with up to 5 screens and basic functionality using Flutter.",
+          "price": "$200",
+          "delivery_time": "5 days"
+        },
+        {
+          "title": "Standard",
+          "description": "I will design a standard mobile app with up to 10 screens and additional functionality such as user accounts and in-app purchases using Flutter.",
+          "price": "$500",
+          "delivery_time": "10 days"
+        },
+        {
+          "title": "Gold",
+          "description": "I will design a custom mobile app with up to 20 screens and advanced functionality such as real-time data updates and integration with external APIs using Flutter.",
+          "price": "$1000",
+          "delivery_time": "15 days"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "MikeJohnson",
+          "review": "Jane was a pleasure to work with. She delivered a beautiful and user-friendly mobile app on time and on budget. Highly recommended!",
+          "rating": 5
+        },
+        {
+          "username": "AmyWilliams",
+          "review": "Jane was great to work with. She understood my vision and brought it to life with her skills. I am very satisfied with the final result.",
+          "rating": 4
+        },
+        {
+          "username": "JohnSmith",
+          "review": "Jane was very professional and delivered a high-quality mobile app. She was responsive to my needs and made sure I was satisfied with the final product. I would definitely hire her again.",
+          "rating": 5
+        }
+      ],
+      "average_rating": 4.7,
+      "delivered_projects": 8
+    },
+    {
+      "username": "MikeDoe",
+      "profile_pic": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/profile-pics%2Fprofilepic-MikeDoe.JPG?alt=media&token=f05f9efb-379b-4301-9a83-834478a9d5eb",
+      "gig_img": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/gig-imgs%2Fcoverimg-gig3.JPG?alt=media&token=752b8561-de7d-48d3-ac65-f8150ac77867",
+      "gig_cat": "mobile development",
+      "gig_title": "I will create a cross-platform mobile app using React Native",
+      "gig_description": "I am a professional cross-platform mobile developer with over 4 years of experience. I specialize in creating mobile apps that can be used on both iOS and Android using React Native. I will work closely with you to understand your requirements and deliver a mobile app that meets your needs.",
+      "packages": [
+        {
+          "title": "Basic",
+          "description": "I will create a basic cross-platform mobile app with up to 5 screens and basic functionality using React Native.",
+          "price": "$150",
+          "delivery_time": "4 days"
+        },
+        {
+          "title": "Standard",
+          "description": "I will create a standard cross-platform mobile app with up to 10 screens and additional functionality such as user accounts and in-app purchases using React Native.",
+          "price": "$400",
+          "delivery_time": "8 days"
+        },
+        {
+          "title": "Gold",
+          "description": "I will create a custom cross-platform mobile app with up to 20 screens and advanced functionality such as real-time data updates and integration with external APIs using React Native.",
+          "price": "$800",
+          "delivery_time": "12 days"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "JaneSmith",
+          "review": "Mike was a pleasure to work with. He delivered a beautiful and user-friendly cross-platform mobile app on time and on budget. Highly recommended!",
+          "rating": 5
+        },
+        {
+          "username": "JohnJohnson",
+          "review": "Mike was great to work with. He understood my vision and brought it to life with his skills. I am very satisfied with the final result.",
+          "rating": 4
+        },
+        {
+          "username": "AmyWilliams",
+          "review": "Mike was very professional and delivered a high-quality cross-platform mobile app. He was responsive to my needs and made sure I was satisfied with the final product. I would definitely hire him again.",
+          "rating": 5
+        }
+      ],
+      "average_rating": 4.7,
+      "delivered_projects": 15
+    },
+    {
+      "username": "Johndavid",
+      "profile_pic": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/profile-pics%2Fprofilepic-Johndavid.JPG?alt=media&token=42b09d50-9c0d-45cd-bdaa-dd392deadc5d",
+      "gig_img": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/gig-imgs%2Fcoverimg-gig4.JPG?alt=media&token=f988e6eb-fc50-44d3-a50c-4a7b24328cee",
+      "gig_cat": "mobile development",
+      "gig_title": "I will create an iOS app using Swift",
+      "gig_description": "I am a professional iOS developer with over 4 years of experience. I specialize in creating high-quality iOS apps using Swift. I will work closely with you to understandyour requirements and deliver an iOS app that meets your needs.",
+      "packages": [
+        {
+          "title": "Basic",
+          "description": "I will create a basic iOS app with up to 5 screens and basic functionality using Swift.",
+          "price": "$75",
+          "delivery_time": "2 days"
+        },
+        {
+          "title": "Standard",
+          "description": "I will create a standard iOS app with up to 10 screens and additional functionality such as user accounts and in-app purchases using Swift.",
+          "price": "$200",
+          "delivery_time": "6 days"
+        },
+        {
+          "title": "Gold",
+          "description": "I will create a custom iOS app with up to 20 screens and advanced functionality such as real-time data updates and integration with external APIs using Swift.",
+          "price": "$500",
+          "delivery_time": "10 days"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "JaneSmith",
+          "review": "John was a pleasure to work with. He delivered a high-quality iOS app on time and on budget. Highly recommended!",
+          "rating": 5
+        },
+        {
+          "username": "MikeJohnson",
+          "review": "John was great to work with. He understood my vision and brought it to life with his skills. I am very satisfied with the final result.",
+          "rating": 4
+        },
+        {
+          "username": "AmyWilliams",
+          "review": "John was very professional and delivered a top-notch iOS app. He was responsive to my needs and made sure I was satisfied with the final product. I would definitely hire him again.",
+          "rating": 5
+        }
+      ],
+      "average_rating": 4.7,
+      "delivered_projects": 18
+    },
+    {
+      "username": "JaneDavid",
+      "profile_pic": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/profile-pics%2Fprofilepic-JaneDavid.JPG?alt=media&token=35fb9b04-6059-453e-a789-a1b952c2c851",
+      "gig_img": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/gig-imgs%2Fcoverimg-gig5.JPG?alt=media&token=c2331275-0767-46b7-b81b-f31c0d03f15b",
+      "gig_cat": "mobile development",
+      "gig_title": "I will create an Android app using Java",
+      "gig_description": "I am a professional Android developer with over 4 years of experience. I specialize in creating high-quality Android apps using Java. I will work closely with you to understand your requirements and deliver an Android app that meets your needs.",
+      "packages": [
+        {
+          "title": "Basic",
+          "description": "I will create a basic Android app with up to 5 screens and basic functionality using Java.",
+          "price": "$100",
+          "delivery_time": "3 days"
+        },
+        {
+          "title": "Standard",
+          "description": "I will create a standard Android app with up to 10 screens and additional functionality such as user accounts and in-app purchases using Java.",
+          "price": "$250",
+          "delivery_time": "7 days"
+        },
+        {
+          "title": "Gold",
+          "description": "I will create a custom Android app with up to 20 screens and advanced functionality such as real-time data updates and integration with external APIs using Java.",
+          "price": "$500",
+          "delivery_time": "14 days"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "MikeJohnson",
+          "review": "Jane was a pleasure to work with. She delivered a high-quality Android app on time and on budget. Highly recommended!",
+          "rating": 5
+        },
+        {
+          "username": "AmyWilliams",
+          "review": "Jane was great to work with. She understood my vision and brought it to life with her skills. I am very satisfied with the final result.",
+          "rating": 4
+        },
+        {
+          "username": "JohnSmith",
+          "review": "Jane was very professional and delivered a top-notch Android app. She was responsive to my needs andmade sure I was satisfied with the final product. I would definitely hire her again.",
+          "rating": 5
+        }
+      ],
+      "average_rating": 4.7,
+      "delivered_projects": 20
+    },
+    {
+      "username": "AmyJohnson",
+      "profile_pic": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/profile-pics%2Fprofilepic-AmyJohnson.JPG?alt=media&token=d5af9496-562a-4490-b717-c69bd6237e9d",
+      "gig_img": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/gig-imgs%2Fcoverimg-gig6.JPG?alt=media&token=e5b4687c-2b06-4924-8268-0cadf784e19b",
+      "gig_cat": "web development",
+      "gig_title": "I will create a responsive website using Wordpress",
+      "gig_description": "I am a professional website developer with over 5 years of experience. I specialize in creating responsive and dynamic websites using Wordpress. I will work closely with you to understand your requirements and deliver a website that meets your needs.",
+      "packages": [
+        {
+          "title": "Basic",
+          "description": "I will create a basic website with up to 5 pages and basic functionality using Wordpress.",
+          "price": "$200",
+          "delivery_time": "5 days"
+        },
+        {
+          "title": "Standard",
+          "description": "I will create a standard website with up to 10 pages and additional functionality such as contact forms and user accounts using Wordpress.",
+          "price": "$500",
+          "delivery_time": "10 days"
+        },
+        {
+          "title": "Gold",
+          "description": "I will create a custom website with up to 20 pages and advanced functionality such as e-commerce integration and real-time data updates using Wordpress.",
+          "price": "$1000",
+          "delivery_time": "15 days"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "JohnSmith",
+          "review": "Amy was a pleasure to work with. She delivered a beautiful and fully functional website on time and on budget. Highly recommended!",
+          "rating": 5
+        },
+        {
+          "username": "MikeJohnson",
+          "review": "Amy did an excellent job on my website. She was very responsive and professional throughout the whole process. I would definitely hire her again!",
+          "rating": 4
+        },
+        {
+          "username": "JaneWilliams",
+          "review": "Amy was great to work with. She understood my vision and brought it to life with her skills. I am very satisfied with the final result.",
+          "rating": 5
+        }
+      ],
+      "average_rating": 4.7,
+      "delivered_projects": 10
+    },
+    {
+      "username": "MikeSmith",
+      "profile_pic": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/profile-pics%2Fprofilepic-MikeSmith.JPG?alt=media&token=e52450ea-4e95-49c8-834b-5a8b1de814ca",
+      "gig_img": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/gig-imgs%2Fcoverimg-gig7.JPG?alt=media&token=22cad2b2-aaf5-4507-8807-21ff83f6ebf6",
+      "gig_cat": "web development",
+      "gig_title": "I will develop an e-commerce website using Shopify",
+      "gig_description": "I am a professional e-commerce developer with over 5 years of experience. I specialize in creating responsive and dynamic e-commerce websites using Shopify. I will work closely with you to understand your requirements and deliver a website that meets your needs.",
+      "packages": [
+        {
+          "title": "Basic",
+          "description": "I will create a basic e-commerce website with up to 10 products and basic functionality using Shopify.",
+          "price": "$150",
+          "delivery_time": "4 days"
+        },
+        {
+          "title": "Standard",
+          "description": "I will create a standard e-commerce website with up to 50 products and additional functionality such as product reviews and discounts using Shopify.",
+          "price": "$400",
+          "delivery_time": "8 days"
+        },
+        {
+          "title": "Gold",
+          "description": "I will create a custom e-commerce website with up to 100 products and advanced functionality such as inventory management and real-time shipping rates using Shopify.",
+          "price": "$800",
+          "delivery_time": "12 days"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "JaneSmith",
+          "review": "Mike was a pleasure to work with. He delivered a beautiful and fully functional e-commerce website ontime and on budget. Highly recommended!",
+          "rating": 5
+        },
+        {
+          "username": "AmyJohnson",
+          "review": "Mike did an excellent job on my e-commerce website. He was very responsive and professional throughout the whole process. I would definitely hire him again!",
+          "rating": 4
+        },
+        {
+          "username": "JohnWilliams",
+          "review": "Mike was great to work with. He understood my vision and brought it to life with his skills. I am very satisfied with the final result.",
+          "rating": 5
+        }
+      ],
+      "average_rating": 4.7,
+      "delivered_projects": 14
+    },
+    {
+      "username": "JaneSmith",
+      "profile_pic": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/profile-pics%2Fprofilepic-JaneSmith.JPG?alt=media&token=f409436e-9ae2-408f-a04a-dfecd82fbc95",
+      "gig_img": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/gig-imgs%2Fcoverimg-gig8.JPG?alt=media&token=bba4f8ff-d0c2-400d-94be-08f4914caf46",
+      "gig_cat": "AI development",
+      "gig_title": "I will develop a chatbot using Dialogflow",
+      "gig_description": "I am a professional chatbot developer with over 3 years of experience. I specialize in creating natural language chatbots using Dialogflow. I will work closely with you to understand your requirements and deliver a chatbot that meets your needs.",
+      "packages": [
+        {
+          "title": "Basic",
+          "description": "I will create a basic chatbot with up to 10 intents and basic functionality using Dialogflow.",
+          "price": "$75",
+          "delivery_time": "2 days"
+        },
+        {
+          "title": "Standard",
+          "description": "I will create a standard chatbot with up to 20 intents and additional functionality such as integration with external APIs and data storage using Dialogflow.",
+          "price": "$200",
+          "delivery_time": "6 days"
+        },
+        {
+          "title": "Gold",
+          "description": "I will create a custom chatbot with up to 30 intents and advanced functionality such as natural language understanding and sentiment analysis using Dialogflow.",
+          "price": "$500",
+          "delivery_time": "10 days"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "MikeJohnson",
+          "review": "Jane was a pleasure to work with. She delivered a high-quality chatbot on time and on budget. Highly recommended!",
+          "rating": 5
+        },
+        {
+          "username": "AmyWilliams",
+          "review": "Jane did an excellent job on my chatbot. She was very responsive and professional throughout the whole process. I would definitely hire her again!",
+          "rating": 4
+        },
+        {
+          "username": "JohnSmith",
+          "review": "Jane was great to work with. She understood my vision and brought it to life with her skills. I am very satisfied with the final result.",
+          "rating": 5
+        }
+      ],
+      "average_rating": 4.7,
+      "delivered_projects": 12
+    },
+    {
+      "username": "JohnJohnson",
+      "profile_pic": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/profile-pics%2Fprofilepic-JohnJohnson.JPG?alt=media&token=6888ae10-e5ce-401c-9057-36f642e9b6fd",
+      "gig_img": "https://firebasestorage.googleapis.com/v0/b/prowork-c3c08.appspot.com/o/gig-imgs%2Fcoverimg-gig9.JPG?alt=media&token=99658dd3-d8e1-4935-bfa2-768e886d5654",
+      "gig_cat": "Game development",
+      "gig_title": "I will create a game using Unity3D",
+      "gig_description": "I am a professional game developer with over 5 years of experience. I specialize in creating 2D and 3D games using Unity3D. I will work closely with you to understand your requirements and deliver a game that meets your needs.",
+      "packages": [
+        {
+          "title": "Basic",
+          "description": "I will create a basic 2D game with up to 5 levels and basic functionality using Unity3D.",
+          "price": "$100",
+          "delivery_time": "3 days"
+        },
+        {
+          "title": "Standard",
+          "description": "I will create a standard 2D or 3D game with up to 10 levels and additional functionality such as character animations and sound effects using Unity3D.",
+          "price": "$250",
+          "delivery_time": "7 days"
+        },
+        {
+          "title": "Gold",
+          "description": "I will create a custom 2D or 3D game with up to 20 levels and advanced functionality such as physics simulations and multiplayer support using Unity3D.",
+          "price": "$500",
+          "delivery_time": "14 days"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "JaneSmith",
+          "review": "John was a pleasure to work with. He delivered a high-quality game on time and on budget. Highly recommended!",
+          "rating": 5
+        },
+        {
+          "username": "MikeJohnson",
+          "review": "John did an excellent job on my game. He was very responsive and professional throughout the whole process. I would definitely hire him again!",
+          "rating": 4
+        },
+        {
+          "username": "AmyWilliams",
+          "review": "John was great to work with. He understood my vision and brought it to life with his skills. I am very satisfied with the final result.",
+          "rating": 5
+        }
+      ],
+      "average_rating": 4.7,
+      "delivered_projects": 16
+    }
+  ]
+}

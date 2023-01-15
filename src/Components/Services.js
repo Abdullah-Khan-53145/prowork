@@ -49,10 +49,9 @@ export const Services = () => {
             </h1>
             <div>
               <span>Web Development</span>
-              <span>UI/UX Designing</span>
-              <span>Andriod Development</span>
-              <span>IOS Development</span>
-              <span>Cross-Platform Mobile Development</span>
+              <span>Mobile Designing</span>
+              <span>AI Development</span>
+              <span>Game Development</span>
             </div>
             <button className="primary_btn">Search By filters</button>
           </div>

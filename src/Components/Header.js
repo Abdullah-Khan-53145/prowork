@@ -23,17 +23,13 @@ export const Header = () => {
     <div className="navbar__parent">
       <div className="mobile_nav">
         <img src="/imgs/logo.png" alt="Logo" />
-        <img
-          onClick={handleMobNav}
-          className="hamburger"
-          src="./imgs/ham.svg"
-        />
+        <img onClick={handleMobNav} className="hamburger" src="/imgs/ham.svg" />
       </div>
       <div
         class="navbar"
         style={{ transform: `translateX(${isOpened ? "0%" : "100%"})` }}
       >
-        <img onClick={handleMobNav} className="close" src="./imgs/close.svg" />
+        <img onClick={handleMobNav} className="close" src="/imgs/close.svg" />
         <div class="left-side">
           <img src="/imgs/logo.png" alt="Logo" />
         </div>
