@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../Styles/Header.css";
 
 export const Header = () => {
@@ -22,7 +23,9 @@ export const Header = () => {
   return (
     <div className="navbar__parent">
       <div className="mobile_nav">
-        <img src="/imgs/logo.png" alt="Logo" />
+        <Link to="/">
+          <img src="/imgs/logo.png" alt="Logo" />
+        </Link>
         <img onClick={handleMobNav} className="hamburger" src="/imgs/ham.svg" />
       </div>
       <div
@@ -30,13 +33,13 @@ export const Header = () => {
         style={{ transform: `translateX(${isOpened ? "0%" : "100%"})` }}
       >
         <img onClick={handleMobNav} className="close" src="/imgs/close.svg" />
-        <div class="left-side">
+        <Link to="/" class="left-side">
           <img src="/imgs/logo.png" alt="Logo" />
-        </div>
+        </Link>
         <div class="middle-section">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="#">About</Link>
+          <Link to="#">Contact</Link>
           <button className="primary_btn" href="#">
             Switch to buying
           </button>

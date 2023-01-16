@@ -1,12 +1,12 @@
-import { Hero } from "../Components/Hero";
-import { Services } from "../Components/Services";
-import { PopularGigs } from "../Components/PopularGigs";
+import Hero from "../Components/Hero";
+import Services from "../Components/Services";
+import AllGigs from "../Components/AllGigs";
 export const Home = () => {
   return (
     <>
       <Hero />
       <Services />
-      <PopularGigs />
+      <AllGigs title="Popular Gigs" />
     </>
   );
 };

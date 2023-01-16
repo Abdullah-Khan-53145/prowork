@@ -11,21 +11,40 @@ import { Footer } from "./Components/Footer";
 import { Header } from "./Components/Header";
 import { Home } from "./Pages/Home";
 import { GigPage } from "./Pages/GigPage";
+import SearchPage from "./Pages/SearchPage";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: (
+        <>
+          <Header />
+          <Home />
+        </>
+      ),
     },
     {
       path: "/gig/:id",
-      element: <GigPage />,
+      element: (
+        <>
+          <Header />
+          <GigPage />
+        </>
+      ),
+    },
+    {
+      path: "/search-gig",
+      element: (
+        <>
+          <Header />
+          <SearchPage />
+        </>
+      ),
     },
   ]);
   return (
     <div className="App">
-      <Header />
       <RouterProvider router={router} />
       <Footer />
     </div>

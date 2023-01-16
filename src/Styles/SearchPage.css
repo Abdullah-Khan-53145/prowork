@@ -1,0 +1,29 @@
+.search__page__parent {
+  margin-top: 7rem;
+}
+.search__page__parent h2 {
+  color: #8d021f;
+}
+.search_page_top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.search__page__parent .search-bar {
+  width: 90%;
+}
+.search_page_filter {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.filter {
+  padding: 1rem;
+  border: 1px solid #8d021f;
+  color: #8d021f;
+}

@@ -1,0 +1,15 @@
+.not__found__parent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.not__found__parent img {
+  width: 20rem;
+
+  object-fit: contain;
+}
+.not__found__parent h2 {
+  font-weight: 300;
+}

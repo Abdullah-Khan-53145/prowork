@@ -1,4 +1,9 @@
+import { setSearchAPI } from "../actions";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "../Styles/Services.css";
+
 const data = [
   {
     icon: "./imgs/card-1.svg",
@@ -37,7 +42,18 @@ const data = [
       "Our platform allows businesses to filter the search results by skills, experience, location, and other criteria, which makes it easy for them to find the best freelancers for their projects.",
   },
 ];
-export const Services = () => {
+const Services = ({ search, setSearch }) => {
+  const filters = [
+    "All",
+    "Web Development",
+    "Mobile Development",
+    "AI Development",
+    "Game Development",
+  ];
+  const [_filter, _setFilter] = useState("all");
+  useEffect(() => {
+    setSearch({ ...search, filter: _filter });
+  }, [_filter]);
   return (
     <div className="services__parent">
       <section className="services__child">
@@ -48,12 +64,26 @@ export const Services = () => {
               freelancing
             </h1>
             <div>
-              <span>Web Development</span>
-              <span>Mobile Designing</span>
-              <span>AI Development</span>
-              <span>Game Development</span>
+              {filters.map((filter) => (
+                <button
+                  style={{
+                    backgroundColor:
+                      filter.toLowerCase() === _filter
+                        ? "#8d021f"
+                        : "transparent",
+                    color:
+                      filter.toLowerCase() !== _filter ? "#8d021f" : "white",
+                  }}
+                  className="filter"
+                  onClick={() => _setFilter(filter.toLowerCase())}
+                >
+                  {filter}
+                </button>
+              ))}
             </div>
-            <button className="primary_btn">Search By filters</button>
+            <Link to="/search-gig" className="primary_btn">
+              Search By filters
+            </Link>
           </div>
         </div>
         <div className="services__card">
@@ -69,3 +99,12 @@ export const Services = () => {
     </div>
   );
 };
+const mapStateToProps = (state) => ({
+  search: state.searchState,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setSearch: (key) => dispatch(setSearchAPI(key)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Services);

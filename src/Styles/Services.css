@@ -45,7 +45,7 @@
   top: 5rem;
   width: 75%;
 }
-.services__Heading button {
+.services__Heading a {
   margin-top: 2rem;
 }
 .services__Heading > div > div {
