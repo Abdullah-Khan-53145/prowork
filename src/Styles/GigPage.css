@@ -66,7 +66,7 @@
   font-size: 1.5rem;
 }
 .gig__cover__img {
-  height: 60vh;
+  height: 40rem;
   width: 100%;
 }
 .gig__cover__img > img {
@@ -120,7 +120,7 @@
   font-size: 2.5rem;
 }
 .description {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .dev__time {
   display: flex;
@@ -173,7 +173,7 @@
   height: 80vh;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 760px) {
   .gig__packages__card {
     width: 100%;
   }
@@ -197,7 +197,7 @@
   }
   .buyer__username {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .buyer__average_rating,
   .buyer__delivered__orders {

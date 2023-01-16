@@ -22,6 +22,7 @@ export const GigPage = () => {
     }
   };
   useEffect(() => {
+    window.scrollTo(0, 0);
     getGig();
   }, []);
   return (
