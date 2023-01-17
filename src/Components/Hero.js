@@ -41,7 +41,9 @@ const Hero = ({ search, setSearch }) => {
     </div>
   );
 };
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  search: state.searchState,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   setSearch: (key) => dispatch(setSearchAPI(key)),

@@ -28,6 +28,14 @@ li {
   font-size: 1rem;
   border: none;
 }
+.primary_btn[disabled] {
+  background-color: gray;
+  color: lightgray;
+}
+.primary_btn[disabled]:hover {
+  background-color: gray;
+  color: lightgray;
+}
 .primary_btn:hover {
   background-color: #ca323f;
   color: white;

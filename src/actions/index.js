@@ -1,5 +1,7 @@
-import { SET_ALL_GIGS, SET_SEARCH } from "./actionType";
+import { SET_ALL_GIGS, SET_SEARCH, SET_USER } from "./actionType";
 import { collection, query, getDocs, orderBy } from "firebase/firestore";
+import { signInWithPopup, signOut } from "firebase/auth";
+import { auth, provider } from "../firebase";
 import { db } from "../firebase";
 
 export const setAllGigs = (payload) => ({
@@ -16,6 +18,10 @@ export function setSearchAPI(payload) {
     dispatch(setSearch(payload));
   };
 }
+export const setUser = (user) => ({
+  type: SET_USER,
+  payload: user,
+});
 
 export function setAllGigsAPI() {
   return async (dispatch) => {
@@ -27,5 +33,29 @@ export function setAllGigsAPI() {
       gigarr.push({ ...doc.data(), id: doc.id });
     });
     dispatch(setAllGigs(gigarr));
+  };
+}
+
+export function SignInWithGoogleAPI() {
+  return async (dispatch) => {
+    const result = await signInWithPopup(auth, provider);
+    localStorage.setItem("user", JSON.stringify(result.user));
+    dispatch(setUser(JSON.parse(localStorage.getItem("user"))));
+    console.log(result.user);
+  };
+}
+
+export function SignInWithEmailPasswordAPI(user) {
+  return async (dispatch) => {
+    localStorage.setItem("user", JSON.stringify(user));
+    dispatch(setUser(JSON.parse(localStorage.getItem("user"))));
+  };
+}
+
+export function SignOutAPI() {
+  return async (dispatch) => {
+    localStorage.setItem("user", null);
+    dispatch(setUser(null));
+    await signOut(auth);
   };
 }

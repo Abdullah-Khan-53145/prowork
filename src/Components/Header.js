@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
+import { SignOutAPI } from "../actions";
 import "../Styles/Header.css";
 
-export const Header = () => {
+const Header = ({ user, signOut }) => {
+  const navigate = useNavigate();
   const [isOpened, seIsOpened] = useState(
     window.innerWidth > 756 ? true : false
   );
@@ -16,6 +19,7 @@ export const Header = () => {
       seIsOpened(false);
     }
   };
+  console.log(user);
   useEffect(() => {
     window.addEventListener("resize", setResponsiveness);
     return () => window.removeEventListener("resize", setResponsiveness);
@@ -38,25 +42,53 @@ export const Header = () => {
         </Link>
         <div class="middle-section">
           <Link to="/">Home</Link>
-          <Link to="#">About</Link>
-          <Link to="#">Contact</Link>
-          <button className="primary_btn" href="#">
-            Switch to buying
-          </button>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          {user && (
+            <Link className="primary_btn" to="/user-dashboard">
+              Dashboard
+            </Link>
+          )}
         </div>
         <div class="right-side">
           <img
-            src="https://via.placeholder.com/300x300.png?text=Dummy+Profile+Picture"
+            src={user ? user.photoURL : "/imgs/dummy-pic.svg"}
             alt="User Profile Picture"
           />
           <div className="user__profile">
-            <span>User Name</span>
-            <span>UserName@example.com</span>
+            {user ? (
+              <span>
+                {user.email.split("@")[0].toLowerCase().length > 11
+                  ? user.email.split("@")[0].toLowerCase().slice(0, 11) + " ..."
+                  : user.email.split("@")[0].toLowerCase()}
+              </span>
+            ) : (
+              <span>guest</span>
+            )}
+            {user ? (
+              <span>
+                {user.email.length > 20
+                  ? user.email.slice(0, 20) + " ..."
+                  : user.email}
+              </span>
+            ) : (
+              <span>become a part</span>
+            )}
             {/* 20 character slice */}
             <div className="user__logout__modal">
               <div className="user__logout">
-                <button className="primary_btn" href="#">
-                  LOGOUT
+                <button
+                  onClick={
+                    user
+                      ? () => {
+                          navigate("/");
+                          signOut();
+                        }
+                      : () => navigate("/log-in")
+                  }
+                  className="primary_btn"
+                >
+                  {user ? "LOGOUT" : "LOGIN"}
                 </button>
               </div>
             </div>
@@ -66,3 +98,12 @@ export const Header = () => {
     </div>
   );
 };
+
+const mapStateToProps = (state) => ({
+  user: state.userState.user,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  signOut: () => dispatch(SignOutAPI()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

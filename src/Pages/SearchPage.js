@@ -20,6 +20,9 @@ const SearchPage = ({ search, setSearch }) => {
   useEffect(() => {
     setSearch({ ...search, filter: _filter });
   }, [_filter]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="search__page__parent">
       <div className="search_page_top">

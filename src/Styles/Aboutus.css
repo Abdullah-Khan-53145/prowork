@@ -1,0 +1,21 @@
+.about__us__parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 5rem;
+  margin-top: 10rem;
+}
+.about_info > img {
+  width: 100%;
+  object-fit: contain;
+}
+.about-us-image > img {
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 756px) {
+  .about__us__parent {
+    grid-template-columns: 1fr;
+  }
+}

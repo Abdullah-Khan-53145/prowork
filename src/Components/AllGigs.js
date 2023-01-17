@@ -1,6 +1,5 @@
 import { Gig } from "./Gig";
 import "../Styles/PopularGigs.css";
-import Loading from "./Loading";
 import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
@@ -13,13 +12,11 @@ const AllGigs = ({ title, AllGigs, setAllGigs, search }) => {
   const [len, setlen] = useState(title === "Popular Gigs" ? 6 : 10000);
 
   useEffect(() => {
-    setAllGigs(AllGigs);
-  }, []);
-  useEffect(() => {
     setGigs(
       AllGigs.filter(
         (gig) =>
-          gig.gig_title.toLowerCase().includes(search.key.toLowerCase()) &&
+          (gig.gig_title.toLowerCase().includes(search.key.toLowerCase()) ||
+            gig.gig_cat.toLowerCase().includes(search.key.toLowerCase())) &&
           (gig.gig_cat.toLowerCase() === search.filter ||
             search.filter === "all")
       )
@@ -29,7 +26,8 @@ const AllGigs = ({ title, AllGigs, setAllGigs, search }) => {
     setGigs(
       AllGigs.filter(
         (gig) =>
-          gig.gig_title.toLowerCase().includes(search.key.toLowerCase()) &&
+          (gig.gig_title.toLowerCase().includes(search.key.toLowerCase()) ||
+            gig.gig_cat.toLowerCase().includes(search.key.toLowerCase())) &&
           (gig.gig_cat.toLowerCase() === search.filter ||
             search.filter === "all")
       )

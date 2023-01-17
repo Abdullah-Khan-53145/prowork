@@ -1,0 +1,58 @@
+.info__container label {
+  width: 100%;
+  text-align: start;
+}
+#profile__pic {
+  display: none;
+}
+
+.upload__profile {
+  text-align: center;
+  width: 120px;
+  text-transform: capitalize;
+  text-decoration: underline;
+  color: var(--primary);
+  margin: 10px 0px;
+}
+
+.user__info__container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: var(--primary);
+  padding: 5px;
+}
+.btn-loading-animation {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-loading-bar {
+  width: 4px;
+  height: 0.5rem;
+  margin: 0 8px;
+  border-radius: 4px;
+  animation: btn-loading 1s ease-in-out infinite;
+  background-color: #8d021f;
+}
+
+@keyframes btn-loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 3);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+.Login .primary_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 10rem;
+  height: 3rem;
+}
