@@ -8,8 +8,6 @@ import { connect } from "react-redux";
 import { auth } from "../firebase";
 import { SignInWithEmailPasswordAPI } from "../actions";
 import { useNavigate } from "react-router-dom";
-import { collection, query, getDocs, setDoc, doc } from "firebase/firestore";
-import { db } from "../firebase";
 
 import "../Styles/Login.css";
 import "../Styles/Signup.css";
@@ -140,8 +138,6 @@ function Signup(props) {
       setError("Profile picture required, ");
     }
   };
-
-
 
   return (
     <>

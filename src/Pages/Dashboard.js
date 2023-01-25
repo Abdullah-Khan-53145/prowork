@@ -8,8 +8,11 @@ import {
   where,
   getDocs,
   setDoc,
+  addDoc,
   getDoc,
   doc,
+  onSnapshot,
+  orderBy,
 } from "firebase/firestore";
 import { storage, db } from "../firebase";
 import { Gig } from "../Components/Gig";
@@ -20,6 +23,9 @@ const Dashboard = ({ user, AllGigs }) => {
   const navigate = useNavigate();
   const [chatOpen, setChatOpen] = useState(false);
   const [newGig, setNewGig] = useState(false);
+  const [chats, setChats] = useState([]);
+  const [frd, setFrd] = useState(-1);
+  const [messages, setMessages] = useState([]);
 
   const [OrderModal, setOrderModal] = useState({
     status: false,
@@ -29,6 +35,7 @@ const Dashboard = ({ user, AllGigs }) => {
   const [purchase, setPurchase] = useState([]);
   const [finalFile, setFinalFile] = useState(null);
   const [loading, setLoading] = useState(null);
+  const [mesg, setMesg] = useState("");
 
   const [CosOrderModal, setCosOrderModal] = useState({
     status: false,
@@ -44,16 +51,61 @@ const Dashboard = ({ user, AllGigs }) => {
     { name: "John Doe", profilePic: "/imgs/dummy-pic.svg" },
     { name: "Jane Smith", profilePic: "/imgs/dummy-pic.svg" },
   ];
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const messages = [
-    { text: "Hey, how's it going?", sender: "John Doe", color: "#8d021f" },
-    {
-      text: "I'm good, thanks for asking! How about you?",
-      sender: "Me",
-      color: "#ca323f",
-    },
-  ];
+    const docRef = await addDoc(
+      collection(db, "messages" + "/" + chats[frd].id + "/" + "msgs"),
+      {
+        sender: user.email.split("@")[0],
+        text: mesg,
+        index: messages.length,
+      }
+    );
+    console.log("Document written with ID: ", docRef.id);
+    setMesg("");
+    e.target.scrollTo({ bottom: 0, behavior: "smooth" });
+    // e.target.scrollTop = e.target.scrollHeight;
+    console.log({
+      sender: user.email.split("@")[0],
+      message: mesg,
+      index: messages.length,
+    });
+  };
+  // const messages = [
+  //   { text: "Hey, how's it going?", sender: "John Doe", color: "#8d021f" },
+  //   {
+  //     text: "I'm good, thanks for asking! How about you?",
+  //     sender: "Me",
+  //     color: "#ca323f",
+  //   },
+  // ];
 
+  const getChats = async () => {
+    const q = query(collection(db, "messages"));
+    let chatarr = [];
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      if (
+        doc.data()?.users[0].username === user.email.split("@")[0] ||
+        doc.data()?.users[1].username === user.email.split("@")[0]
+      ) {
+        chatarr.push({
+          id: doc.id,
+          otherUser:
+            doc.data()?.users[0].username === user.email.split("@")[0]
+              ? doc.data()?.users[1].username
+              : doc.data()?.users[0].username,
+          otherUserProfile:
+            doc.data()?.users[0].username === user.email.split("@")[0]
+              ? doc.data()?.users[1].profile_pic
+              : doc.data()?.users[0].profile_pic,
+        });
+      }
+      // doc.data() is never undefined for query doc snapshots
+    });
+    setChats(chatarr);
+  };
   const handleOpenOrder = (order) => {
     setOrderModal({ status: true, data: order });
     console.log(order);
@@ -168,8 +220,18 @@ const Dashboard = ({ user, AllGigs }) => {
   useEffect(() => {
     setMyGigs(AllGigs.filter((gig) => gig.uid === user.uid));
     getOrders();
+    getChats();
     getPurchase();
   }, [AllGigs]);
+  const getMessages = (id) => {
+    const q = query(
+      collection(db, "messages" + "/" + id + "/" + "msgs"),
+      orderBy("index")
+    );
+    const real = onSnapshot(q, (querySnapshot) => {
+      setMessages(querySnapshot.docs.map((doc) => doc.data()));
+    });
+  };
 
   return (
     <>
@@ -352,11 +414,22 @@ const Dashboard = ({ user, AllGigs }) => {
       <div className="dashboard_container">
         <div className="dashboard_right-sidebar">
           <div className="dashboard_friends-list">
-            {friends.map((friend, index) => (
-              <div key={index} className="dashboard_friend">
-                <img src={friend.profilePic} alt={friend.name} />
-                <span>{friend.name}</span>
-              </div>
+            {chats.map((chat, index) => (
+              <button
+                key={index}
+                className="dashboard_friend"
+                onClick={() => {
+                  setFrd(index);
+                  getMessages(chat.id);
+                }}
+                style={{
+                  border: frd === index ? "1px solid lightgray" : "none",
+                  cursor: "pointer",
+                }}
+              >
+                <img src={chat.otherUserProfile} alt={chat.name} />
+                <span>{chat.otherUser}</span>
+              </button>
             ))}
           </div>
           <div className="dashboard_orders">
@@ -407,18 +480,23 @@ const Dashboard = ({ user, AllGigs }) => {
                   className="dashboard_message"
                   style={{
                     color: message.color,
-                    textAlign: message.sender === "Me" ? "end" : "start",
+                    alignItems:
+                      message.sender === user.email.split("@")[0]
+                        ? "flex-end"
+                        : "flex-start",
                   }}
                 >
-                  <span>{message.sender}:</span> {message.text}
+                  <span>{message.sender}:</span> <p> {message.text}</p>
                 </div>
               </div>
             ))}
           </div>
-          <form class="dashboard_message-form">
+          <form onSubmit={handleSubmit} class="dashboard_message-form">
             <div class="dashboard_message-input-container">
               <input
                 type="text"
+                value={mesg}
+                onChange={(e) => setMesg(e.target.value)}
                 placeholder="Type your message here"
                 class="dashboard_message-input"
               />

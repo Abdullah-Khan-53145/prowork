@@ -58,10 +58,17 @@
 }
 
 .dashboard_message {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 .dashboard_message > span {
+  width: 48%;
+  font-size: 0.7rem;
   font-weight: 600;
+}
+.dashboard_message > p {
+  max-width: 30rem;
 }
 
 .dashboard_main-content {

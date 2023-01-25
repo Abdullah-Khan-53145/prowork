@@ -1,4 +1,4 @@
-import { SET_ALL_GIGS, SET_SEARCH, SET_USER } from "./actionType";
+import { SET_ALL_GIGS, SET_SEARCH, SET_USER, SET_CHAT } from "./actionType";
 import { collection, query, getDocs, orderBy } from "firebase/firestore";
 import { signInWithPopup, signOut } from "firebase/auth";
 import { auth, provider } from "../firebase";
@@ -6,6 +6,10 @@ import { db } from "../firebase";
 
 export const setAllGigs = (payload) => ({
   type: SET_ALL_GIGS,
+  payload: payload,
+});
+export const setChat = (payload) => ({
+  type: SET_CHAT,
   payload: payload,
 });
 export const setSearch = (payload) => ({
@@ -16,6 +20,11 @@ export const setSearch = (payload) => ({
 export function setSearchAPI(payload) {
   return async (dispatch) => {
     dispatch(setSearch(payload));
+  };
+}
+export function setChatAPI(payload) {
+  return async (dispatch) => {
+    dispatch(setChat(payload));
   };
 }
 export const setUser = (user) => ({

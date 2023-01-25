@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../Components/Loading";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, collection, getDocs, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { useEffect, useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
 import { connect } from "react-redux";
 import "../Styles/GigPage.css";
+import { setChatAPI } from "../actions";
 const GigPage = ({ user }) => {
   const packages = ["Basic", "Standard", "Gold"];
   const [gig, setGig] = useState(null);
@@ -13,7 +13,7 @@ const GigPage = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const navigate = useNavigate();
   const [customerInfo, setCustomerInfo] = useState({
     description: "",
   });
@@ -26,7 +26,6 @@ const GigPage = ({ user }) => {
   const getGig = async () => {
     const docRef = doc(db, "gigs", id);
     const docSnap = await getDoc(docRef);
-
     if (docSnap.exists()) {
       console.log("Document data:", docSnap.data());
       setGig(docSnap.data());
@@ -106,7 +105,29 @@ const GigPage = ({ user }) => {
     return getDate(currentDate);
   };
   console.log(getFinalDate(0));
-
+  const handleContact = async () => {
+    console.log("clicked", `${user.uid}`);
+    const querySnapshot = await getDocs(collection(db, `messages`));
+    querySnapshot.forEach(async (doc) => {
+      console.log("index");
+      if (
+        doc.data()?.users[0].username === gig.username ||
+        doc.data()?.users[1].username === gig.username
+      ) {
+        navigate("/user-dashboard");
+      } else {
+        const docRef = await addDoc(collection(db, "messages"), {
+          users: [
+            { username: user.email.split("@")[0], profile_pic: user.photoURL },
+            { username: gig.username, profile_pic: gig.profile_pic },
+          ],
+          messages: [],
+        });
+        console.log("Document written with ID: ", docRef.id);
+        navigate("/user-dashboard");
+      }
+    });
+  };
   // use Effect
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -303,7 +324,9 @@ const GigPage = ({ user }) => {
                     Purchase
                   </button>
                 </div>
-                <button className="secondary_btn">Contact Seller</button>
+                <button onClick={handleContact} className="secondary_btn">
+                  Contact Seller
+                </button>
               </div>
             </div>
           </div>
@@ -319,5 +342,7 @@ const mapStateToProps = (state) => ({
   user: state.userState.user,
 });
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  setChat: (payload) => dispatch(setChatAPI(payload)),
+});
 export default connect(mapStateToProps, mapDispatchToProps)(GigPage);
