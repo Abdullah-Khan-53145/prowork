@@ -486,7 +486,7 @@ const Dashboard = ({ user, AllGigs }) => {
                         : "flex-start",
                   }}
                 >
-                  <span>{message.sender}:</span> <p> {message.text}</p>
+                  <span>{message.sender}</span> <p> {message.text}</p>
                 </div>
               </div>
             ))}
